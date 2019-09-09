@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body style="background-color:  #ffdb58 ; padding: 25px">
+    <h1>Chuck Norris Jokes!!!🤕😠🥋🤕😠🥋🤕😠🥋</h1>
+    <h2 style="background-color: black; color: white">Joke 1</h2>
+    <p style="background-color: black; color: white" id="chuck1"></p>
+    <h2 style="background-color: black; color: white">Joke 2</h2>
+    <p style="background-color: black; color: white" id="chuck2"></p>
+    <h2 style="background-color: black; color: white">Joke 3</h2>
+    <p style="background-color: black; color: white" id="chuck3"></p>
+</body>
+<script type="text/javascript">
+// putting the info that is fetced inside a array 
+items = [];
+var arr;
+var jOKe;
+// fetching info of the joke from the link
+fetch("http://api.icndb.com/jokes/random/3")
+    .then(res => res.json())
+    .then((result) => {
+        // putting the results in a variable
+        items = result.value;
+// giving the jokes variable names
+        jOKe1 = items[0].joke;
+        jOKe2 = items[1].joke;
+        jOKe3 = items[2].joke;
+// setting up the jokes to where the id's are 
+        document.getElementById("chuck1").innerHTML += jOKe1;
+        document.getElementById("chuck2").innerHTML += jOKe2;
+        document.getElementById("chuck3").innerHTML += jOKe3;
+
+    })
+</script>
+</html>
