@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time</title>
+</head>
+<body style="background-color: #ffdb58; ">
+    <p style="text-align: center; font-size: 70px;">Time: GMT+0200(South Africa Standard Time)</p>
+    <p id="time" style="text-align: center; font-size: 100px;" ></p>
+    <script>
+        // setting interval for one second
+    var myVar = setInterval(tIMer, 1000);
+// using a function to show the date
+    function tIMer() {
+        var d = new Date();
+        var tyme = d.toLocaleTimeString();
+        document.getElementById("time").innerHTML = tyme;
+    }
+    </script>
+</body>
+
+</html>
